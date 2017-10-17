@@ -1,5 +1,5 @@
 # project: cj8vsg4dv05g60124i6i9kzjt
-# version: 6
+# version: 8
 
 type File @model {
   contentType: String!
@@ -18,10 +18,15 @@ type Link @model {
   id: ID! @isUnique
   updatedAt: DateTime!
   url: String!
+  postedBy: User @relation(name: "UsersLinks")
 }
 
 type User @model {
   createdAt: DateTime!
+  email: String @isUnique
   id: ID! @isUnique
+  name: String!
+  password: String
   updatedAt: DateTime!
+  links: [Link!]! @relation(name: "UsersLinks")
 }
