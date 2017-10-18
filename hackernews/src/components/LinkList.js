@@ -75,4 +75,4 @@ export const ALL_LINKS_QUERY = gql`
 `
 
 // name option specifies the name of the prop that Apollo injects into the LinkList component; defaults to data
-export default graphql(ALL_LINKS_QUERY, { name: 'allLinksQuery' }) (LinkList)
+export default graphql(ALL_LINKS_QUERY, { name: 'allLinksQuery' })(LinkList)
